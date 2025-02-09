@@ -47,7 +47,7 @@ Este proyecto es un **servidor HTTP multihilo** desarrollado en Java, capaz de m
 MultiThreaded-HTTP-Server/
 ├── src/
 │   ├── index.html
-│   ├── style.css
+│   ├── meme.jpg
 │   ├── 404.html
 ├── Main.java
 ├── HttpRequest.java
