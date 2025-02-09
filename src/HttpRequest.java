@@ -15,13 +15,13 @@ public class HttpRequest implements Runnable {
         try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
              OutputStream out = clientSocket.getOutputStream()) {
 
-            // Leer la solicitud HTTP (solo la primera línea)
+           
             String requestLine = in.readLine();
             if (requestLine != null) {
                 System.out.println("Solicitud recibida: " + requestLine);
             }
 
-            // Extraer el nombre del archivo solicitado
+           
             StringTokenizer partesLinea = new StringTokenizer(requestLine);
             String method = partesLinea.nextToken(); // Método (GET)
             String nombreArchivo = partesLinea.nextToken(); // Archivo solicitado
@@ -29,11 +29,11 @@ public class HttpRequest implements Runnable {
 
             // Construir la ruta completa al archivo en la carpeta "src"
             String filePath = "src" + nombreArchivo;
-            File archivo = new File(filePath);  // Usamos la ruta construida
+            File archivo = new File(filePath);  
 
             System.out.println("Buscando archivo: " + archivo.getAbsolutePath());  // Imprimir la ruta completa para depurar
 
-            // Variables para la respuesta HTTP
+            
             String lineaDeEstado = null;
             String lineaDeTipoContenido = null;
 
@@ -59,8 +59,8 @@ public class HttpRequest implements Runnable {
                 enviarString(lineaDeTipoContenido, out);
                 enviarString("\r\n", out);
 
-                // Si no se encuentra el archivo solicitado, enviar una página de error 404
-                File archivo404 = new File("./src/404.html");  // Intentar cargar el archivo 404.html
+                // Si no se encuentra el archivo solicitado enviar una página de error 404
+                File archivo404 = new File("./src/404.html");  
                 if (archivo404.exists()) {
                     try (FileInputStream fis = new FileInputStream(archivo404)) {
                         enviarBytes(fis, out);
