@@ -39,8 +39,8 @@ Este proyecto es un **servidor HTTP multihilo** desarrollado en Java, capaz de m
    - Ingresa la URL: `http://localhost:8080`
 
    Puedes solicitar archivos específicos, por ejemplo:
-   - `http://localhost:8081/index.html`
-   - `http://localhost:8081/style.css`
+   - `http://localhost:8080/index.html`
+   - `http://localhost:8080/style.css`
 
 ### 📂 **Estructura de Archivos:**
 ```
