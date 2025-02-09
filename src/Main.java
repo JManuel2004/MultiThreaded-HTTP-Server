@@ -4,7 +4,7 @@ import java.net.Socket;
 
 public class Main {
     public static void main(String[] args) {
-        int port = 8081; // Puerto en el que el servidor escuchará
+        int port = 8080; // Puerto en el que el servidor escuchará
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Servidor HTTP iniciado en el puerto " + port);
